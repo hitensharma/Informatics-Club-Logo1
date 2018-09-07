@@ -1,0 +1,258 @@
+body {
+  background: #fff;
+}
+
+#global {
+  width: 70px;
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+  cursor: pointer;
+  height: 60px;
+}
+
+.m-mid {
+  position: relative;
+}
+
+.mask {
+  position: absolute;
+  border-radius: 2px;
+  overflow: hidden;
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+
+.plane {
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  perspective: 1000;
+  backface-visibility: hidden;
+}
+
+#left-post {
+  width: 9px;
+  height: 56px;
+  top: -48px;
+  right: 58px;
+  transform: rotate(90deg);
+  border-radius:1em;
+}
+
+#left-diag {
+  width: 9px;
+  height: 56px;
+  transform: rotate(90deg) skew(0deg, 0);
+  top: 40px;
+  right: 58px;
+  border-radius:1em;
+
+}
+
+
+#left-post-mid {
+  width: 9px;
+  height: 20px;
+  top: -18px;
+  right: 60px;
+  transform: rotate(180deg);
+  border-radius:1em;
+}
+
+#left-diag-mid {
+  width: 9px;
+  height: 56px;
+  transform: rotate(180deg) skew(0deg, 0);
+  top: 15px;
+  right: 60px;
+  border-radius:1em;
+
+}
+
+#mid-top {
+  width: 9px;
+  height: 70px;
+  transform: rotate(90deg) skew(0deg, 0);
+  left: 14px;
+  top:-27px;
+  border-radius:1em 1em 1em 1em;
+}
+
+#mid-middle {
+  width: 9px;
+  height: 44px;
+  top: 6px;
+  left:-18px;
+  border-radius:1em;
+}
+
+#mid-bottom-1 {
+  width: 9px;
+  height: 14px;
+  transform: rotate(90deg) skew(0deg, 0);
+  border-radius:1em;
+  left: -12px;
+  top: 38px;
+}
+#mid-bottom-2 {
+  width: 9px;
+  height: 24px;
+  transform: rotate(90deg) skew(0deg, 0);
+  border-radius:1em;
+  left: 19px;
+  top: 33px;
+}
+/*
+#right-post {
+  width: 14px;
+  height: 61px;
+  top: -3px;
+  right: 8px;
+  transform: rotate(180deg);
+}
+
+#right-diag {
+  width: 14px;
+  height: 26px;
+  transform: rotate(53deg) skew(22deg, 0);
+  top: 1px;
+  right: 18px;
+}
+*/
+p {
+  color: #fff;
+  position: absolute;
+  left: -3px;
+  top: 45px;
+  font-family: Arial;
+  text-align: center;
+  font-size: 10px;
+}
+
+#loader {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  margin: 0;
+  right: -80px;
+  bottom: -85px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-color: #fff;
+  animation: spin 4.7s linear infinite 1.8s;
+}
+
+.animation {
+  transition: all 0.3s ease;
+}
+
+/*--middle--*/
+#mid-left .plane {
+  z-index: 2000;
+  animation: mid-left .5s ease  .4s backwards;
+}
+
+#mid-middle .plane {
+  animation: mid-center .5s ease-in  0s forwards;
+}
+
+#mid-right .plane {
+  z-index: 2000;
+  animation: mid-right .5s ease  .4s backwards;
+}
+
+/*--left side--*/
+#left-post .plane {
+  z-index: 2000;
+  animation: left-post .5s ease  .8s backwards;
+}
+
+#left-diag .plane {
+  animation: left-angle .5s ease  .5s  backwards;
+}
+
+/*--right side--*/
+#right-post .plane {
+  z-index: 2000;
+  animation: right-post .5s ease  .8s backwards;
+}
+
+#right-diag .plane {
+  animation: right-angle .5s ease .5s  backwards;
+}
+
+/*--end animations--*/
+@keyframes spin {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes mid-left {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes mid-center {
+  from {
+    transform: translate(0, 60px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes mid-right {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+/*left side*/
+@keyframes left-post {
+  from {
+    transform: translate(0, 70px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes left-angle {
+  from {
+    transform: translate(0, 40px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+/*right side*/
+@keyframes right-post {
+  from {
+    transform: translate(0, 70px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes right-angle {
+  from {
+    transform: translate(0, 40px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
